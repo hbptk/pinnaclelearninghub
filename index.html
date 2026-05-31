@@ -639,27 +639,27 @@
           <div class="demo-form-sub">Register for the free 3-day demo class. Our team will contact you with batch details within 24 hours.</div>
           <div class="form-group">
             <label class="form-label">Full Name</label>
-            <input class="form-input" type="text" placeholder="Your full name" id="fname" autocomplete="name">
+            <input class="form-input" type="text" placeholder="Your full name" id="fname" name="name" autocomplete="name">
           </div>
           <div class="form-group">
             <label class="form-label">Mobile Number</label>
-            <input class="form-input" type="tel" placeholder="+91 your number" id="fphone" autocomplete="tel">
+            <input class="form-input" type="tel" placeholder="+91 your number" id="fphone" name="mobile" autocomplete="tel">
           </div>
           <div class="form-group">
             <label class="form-label">Email Address</label>
-            <input class="form-input" type="email" placeholder="your@email.com" id="femail" autocomplete="email">
+            <input class="form-input" type="email" placeholder="your@email.com" id="femail" name="email" autocomplete="email">
           </div>
           <div class="form-group">
             <label class="form-label">Course Interest</label>
-            <select class="form-input form-select" id="fcourse">
+            <select class="form-input form-select" id="fcourse" name="course">
               <option value="" disabled selected>Select your level</option>
-              <option value="foundation">CA Foundation</option>
-              <option value="intermediate-g1">CA Intermediate — Group I</option>
-              <option value="intermediate-g2">CA Intermediate — Group II</option>
-              <option value="intermediate-both">CA Intermediate — Both Groups</option>
+              <option value="CA Foundation">CA Foundation</option>
+              <option value="CA Intermediate — Group I">CA Intermediate — Group I</option>
+              <option value="CA Intermediate — Group II">CA Intermediate — Group II</option>
+              <option value="CA Intermediate — Both Groups">CA Intermediate — Both Groups</option>
             </select>
           </div>
-          <button class="form-submit" onclick="handleSubmit()">Register for Free Demo Class</button>
+          <button class="form-submit" onclick="handleSubmit(event)">Register for Free Demo Class</button>
           <p class="form-note">Your details are used only to contact you about the demo class. We do not share your information with anyone.</p>
         </div>
         <div class="form-success" id="formSuccess">
@@ -715,9 +715,9 @@
         </a>
       </div>
       <div class="reveal reveal-delay-2">
-        <!-- Exact coordinates: 22.6996, 75.8357 — Ranjeet Hanuman Mandir area, Usha Nagar Extension, Indore -->
+        <!-- Exact coordinates: 22.69925, 75.83691 — Verified from Happy Biz location pin, Usha Nagar Extension, Indore -->
         <iframe class="map-embed"
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.893!2d75.83347!3d22.69965!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962fd5a9b5f6e8f%3A0x5b3c2e1a4d6f7890!2sUsha%20Nagar%20Extension%2C%20Indore%2C%20Madhya%20Pradesh%20452009!5e0!3m2!1sen!2sin!4v1748000000000!5m2!1sen!2sin"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d936.8!2d75.83641!3d22.69925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDQxJzU3LjMiTiA3NcKwNTAnMTIuOSJF!5e0!3m2!1sen!2sin!4v1748000000000!5m2!1sen!2sin"
           allowfullscreen="" loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Pinnacle Learning Hub — 215 Usha Nagar Extension, Near Ranjeet Hanuman Temple, Indore">
@@ -776,15 +776,45 @@
   }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
   reveals.forEach(el => observer.observe(el));
 
-  function handleSubmit() {
+  async function handleSubmit(e) {
+    e.preventDefault();
     const name = document.getElementById('fname').value.trim();
     const phone = document.getElementById('fphone').value.trim();
+    const email = document.getElementById('femail').value.trim();
     const course = document.getElementById('fcourse').value;
     if (!name) { alert('Please enter your full name.'); return; }
     if (!phone || phone.length < 10) { alert('Please enter a valid mobile number.'); return; }
     if (!course) { alert('Please select your course interest.'); return; }
-    document.getElementById('formArea').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+
+    const btn = document.querySelector('.form-submit');
+    btn.textContent = 'Submitting...';
+    btn.disabled = true;
+
+    try {
+      const response = await fetch('https://formspree.io/f/xbdbeveg', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name,
+          mobile: phone,
+          email: email,
+          course: course,
+          _subject: 'New Demo Class Registration — Pinnacle Learning Hub'
+        })
+      });
+      if (response.ok) {
+        document.getElementById('formArea').style.display = 'none';
+        document.getElementById('formSuccess').style.display = 'block';
+      } else {
+        btn.textContent = 'Register for Free Demo Class';
+        btn.disabled = false;
+        alert('Something went wrong. Please call us directly at +91 62834 04371.');
+      }
+    } catch (err) {
+      btn.textContent = 'Register for Free Demo Class';
+      btn.disabled = false;
+      alert('Something went wrong. Please call us directly at +91 62834 04371.');
+    }
   }
 
   window.addEventListener('scroll', () => {
