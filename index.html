@@ -88,10 +88,10 @@
   .mobile-menu .mob-cta { background: var(--navy); color: #fff; padding: 16px; text-align: center; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 2px; text-transform: uppercase; margin-top: 12px; display: block; }
 
   /* ── HERO ── */
-  .hero { min-height: 100vh; background: var(--navy-dark); position: relative; overflow: hidden; display: flex; align-items: center; padding-top: 72px; }
-  .hero-bg-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px); background-size: 60px 60px; }
-  .hero-orb-1 { position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(201,168,76,0.09) 0%, transparent 70%); border-radius: 50%; }
-  .hero-orb-2 { position: absolute; bottom: -200px; left: -80px; width: 450px; height: 450px; background: radial-gradient(circle, rgba(35,77,138,0.5) 0%, transparent 70%); border-radius: 50%; }
+  .hero { min-height: 100vh; background: linear-gradient(135deg, #1B3A6B 0%, #162f58 50%, #0f2347 100%); position: relative; overflow: hidden; display: flex; align-items: center; padding-top: 72px; }
+  .hero-bg-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.06) 1px, transparent 1px); background-size: 60px 60px; }
+  .hero-orb-1 { position: absolute; top: -100px; right: -100px; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,168,76,0.1) 0%, transparent 70%); border-radius: 50%; }
+  .hero-orb-2 { position: absolute; bottom: -200px; left: -80px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(27,58,107,0.6) 0%, transparent 70%); border-radius: 50%; }
   .hero-inner { position: relative; z-index: 2; max-width: 1200px; margin: 0 auto; padding: 80px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
   .hero-badge { display: inline-flex; align-items: center; gap: 10px; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.35); padding: 8px 18px; margin-bottom: 28px; }
   .hero-badge-dot { width: 8px; height: 8px; background: var(--gold); border-radius: 50%; animation: pulse 2s infinite; }
@@ -149,16 +149,16 @@
   .about-point-desc { font-size: 15px; color: var(--text-mid); line-height: 1.7; font-weight: 300; }
 
   /* ── USP ── */
-  .usp-section { background: var(--navy-dark); position: relative; overflow: hidden; }
-  .usp-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px); background-size: 80px 80px; }
+  .usp-section { background: var(--cream-dark); position: relative; overflow: hidden; }
+  .usp-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(27,58,107,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(27,58,107,0.03) 1px, transparent 1px); background-size: 80px 80px; }
   .usp-header { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 64px; }
-  .usp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: rgba(201,168,76,0.1); position: relative; z-index: 1; }
-  .usp-card { background: rgba(15,35,71,0.92); padding: 38px 30px; transition: background 0.3s; position: relative; overflow: hidden; }
-  .usp-card:hover { background: rgba(27,58,107,0.92); }
-  .usp-card-num { font-family: 'Cormorant Garamond', serif; font-size: 60px; font-weight: 600; color: rgba(201,168,76,0.1); line-height: 1; position: absolute; top: 18px; right: 22px; }
-  .usp-card-icon { width: 48px; height: 48px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
-  .usp-card-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--cream); margin-bottom: 12px; line-height: 1.2; }
-  .usp-card-desc { font-size: 14px; color: rgba(248,245,240,0.5); line-height: 1.75; font-weight: 300; }
+  .usp-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; position: relative; z-index: 1; }
+  .usp-card { background: var(--white); border: 1px solid var(--border-light); padding: 38px 30px; transition: all 0.3s; position: relative; overflow: hidden; box-shadow: var(--shadow-sm); }
+  .usp-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--border-gold); }
+  .usp-card-num { font-family: 'Cormorant Garamond', serif; font-size: 60px; font-weight: 600; color: rgba(27,58,107,0.06); line-height: 1; position: absolute; top: 18px; right: 22px; }
+  .usp-card-icon { width: 48px; height: 48px; background: var(--gold-pale); border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; }
+  .usp-card-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--text-dark); margin-bottom: 12px; line-height: 1.2; }
+  .usp-card-desc { font-size: 14px; color: var(--text-mid); line-height: 1.75; font-weight: 300; }
   .usp-card-bar { height: 2px; background: linear-gradient(90deg, var(--gold), transparent); margin-top: 28px; width: 60px; transition: width 0.4s; }
   .usp-card:hover .usp-card-bar { width: 100%; }
 
@@ -210,13 +210,13 @@
 
   /* ── DEMO ── */
   .demo-section { background: var(--navy); position: relative; overflow: hidden; }
-  .demo-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px); background-size: 60px 60px; }
+  .demo-section::before { content: ''; position: absolute; inset: 0; background-image: linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px); background-size: 60px 60px; }
   .demo-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
   .demo-features { display: flex; flex-direction: column; gap: 22px; margin-top: 40px; }
   .demo-feature { display: flex; gap: 18px; align-items: center; }
-  .demo-feature-icon { width: 44px; height: 44px; background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .demo-feature-text { font-size: 16px; color: rgba(248,245,240,0.8); font-weight: 300; }
-  .demo-form-wrap { background: var(--white); padding: 44px; box-shadow: var(--shadow-lg); }
+  .demo-feature-icon { width: 44px; height: 44px; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .demo-feature-text { font-size: 16px; color: rgba(248,245,240,0.85); font-weight: 300; }
+  .demo-form-wrap { background: var(--white); padding: 44px; box-shadow: var(--shadow-lg); border-radius: 2px; }
   .demo-form-title { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; color: var(--text-dark); margin-bottom: 8px; }
   .demo-form-sub { font-size: 15px; color: var(--text-mid); margin-bottom: 32px; font-weight: 300; }
   .form-group { margin-bottom: 18px; }
@@ -265,7 +265,49 @@
   .footer-links a:hover { color: var(--gold); }
   .footer-copy { font-size: 12px; color: rgba(248,245,240,0.2); }
 
-  /* ── REVEAL ── */
+  /* ── FLOATING WHATSAPP ── */
+  .float-wa {
+    position: fixed; bottom: 28px; right: 28px; z-index: 999;
+    width: 60px; height: 60px; background: #25D366;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 4px 20px rgba(37,211,102,0.4);
+    text-decoration: none; transition: all 0.3s;
+    animation: waFloat 3s ease-in-out infinite;
+  }
+  .float-wa:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(37,211,102,0.6); }
+  @keyframes waFloat { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-6px);} }
+  .float-wa-tooltip {
+    position: absolute; right: 72px; background: var(--navy);
+    color: var(--cream); font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; letter-spacing: 1px; padding: 8px 14px;
+    white-space: nowrap; opacity: 0; transition: opacity 0.3s;
+    pointer-events: none;
+  }
+  .float-wa-tooltip::after { content: ''; position: absolute; right: -6px; top: 50%; transform: translateY(-50%); border: 6px solid transparent; border-left-color: var(--navy); border-right: none; }
+  .float-wa:hover .float-wa-tooltip { opacity: 1; }
+
+  /* ── SECTION DIVIDER ── */
+  .section-divider { width: 100%; height: 4px; background: linear-gradient(90deg, var(--navy), var(--gold), var(--navy)); opacity: 0.12; }
+
+  /* ── IMPROVED COURSE CARD HOVER ── */
+  .course-cta { width: 100%; background: var(--navy); color: var(--cream); padding: 16px; font-family: 'Barlow Condensed', sans-serif; font-weight: 700; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; border: none; cursor: pointer; transition: all 0.3s; min-height: 52px; position: relative; overflow: hidden; }
+  .course-cta::before { content: ''; position: absolute; left: -100%; top: 0; width: 100%; height: 100%; background: var(--gold); transition: left 0.3s; z-index: 0; }
+  .course-cta:hover::before { left: 0; }
+  .course-cta:hover { color: var(--navy-dark); }
+  .course-cta span { position: relative; z-index: 1; }
+
+  /* ── FACULTY CARD IMPROVED HOVER ── */
+  .faculty-card-top { background: var(--navy); padding: 36px 24px 28px; text-align: center; transition: background 0.3s; }
+  .faculty-card:hover .faculty-card-top { background: var(--navy-mid); }
+
+  /* ── NOTES CARD IMPROVED ── */
+  .notes-card-icon { width: 52px; height: 52px; background: var(--navy); display: flex; align-items: center; justify-content: center; margin-bottom: 22px; transition: background 0.3s; }
+  .notes-card:hover .notes-card-icon { background: var(--gold); }
+
+  /* ── BACK TO TOP ── */
+  .back-top { position: fixed; bottom: 100px; right: 30px; z-index: 998; width: 40px; height: 40px; background: var(--navy); color: var(--cream); border: none; cursor: pointer; display: none; align-items: center; justify-content: center; box-shadow: var(--shadow-md); transition: all 0.3s; font-size: 18px; }
+  .back-top.visible { display: flex; }
+  .back-top:hover { background: var(--gold); color: var(--navy-dark); }
   .reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.1s; }
@@ -451,9 +493,9 @@
     <div class="usp-header reveal">
       <div>
         <div class="section-label">Why Pinnacle</div>
-        <h2 class="section-title light">What Sets Us<br><em>Apart</em></h2>
+        <h2 class="section-title">What Sets Us<br><em>Apart</em></h2>
       </div>
-      <p class="section-desc light">Six pillars that define the Pinnacle difference — built deliberately to give CA aspirants every possible advantage in their preparation.</p>
+      <p class="section-desc">Six pillars that define the Pinnacle difference — built deliberately to give CA aspirants every possible advantage in their preparation.</p>
     </div>
     <div class="usp-grid">
       <div class="usp-card reveal reveal-delay-1">
@@ -526,7 +568,7 @@
           </div>
         </div>
         <div class="course-footer">
-          <button class="course-cta" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Register for Free Demo Class</button>
+          <button class="course-cta" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})"><span>Register for Free Demo Class</span></button>
         </div>
       </div>
       <div class="course-card reveal reveal-delay-2">
@@ -546,7 +588,7 @@
           </div>
         </div>
         <div class="course-footer">
-          <button class="course-cta" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Register for Free Demo Class</button>
+          <button class="course-cta" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})"><span>Register for Free Demo Class</span></button>
         </div>
       </div>
     </div>
@@ -770,6 +812,15 @@
   </div>
 </section>
 
+<!-- FLOATING WHATSAPP -->
+<a class="float-wa" href="https://wa.me/916283404371?text=Hello%20Pinnacle%20Learning%20Hub%2C%20I%20am%20interested%20in%20the%20free%20demo%20class." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <div class="float-wa-tooltip">Chat with us</div>
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.5 2C6.261 2 2 6.261 2 11.5c0 1.671.43 3.24 1.182 4.606L2 22l6.073-1.165C9.36 21.567 10.41 21.9 11.5 21.9c5.239 0 9.5-4.261 9.5-9.5S16.739 2 11.5 2zm0 17.9c-1.325 0-2.626-.348-3.768-.997l-.27-.16-2.8.538.563-2.739-.176-.281C4.349 15.009 4 13.278 4 11.5 4 7.364 7.364 4 11.5 4S19 7.364 19 11.5 15.636 19.9 11.5 19.9z"/></svg>
+</a>
+
+<!-- BACK TO TOP -->
+<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">↑</button>
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
@@ -859,6 +910,9 @@
     document.getElementById('navbar').style.boxShadow = window.scrollY > 20
       ? '0 4px 24px rgba(27,58,107,0.12)'
       : '0 2px 16px rgba(27,58,107,0.07)';
+    const backTop = document.getElementById('backTop');
+    if (window.scrollY > 400) backTop.classList.add('visible');
+    else backTop.classList.remove('visible');
   });
 </script>
 </body>
